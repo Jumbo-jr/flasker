@@ -1,0 +1,29 @@
+<main role="main" class="container">
+    <div class="row">
+      <div class="col-md-8">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {% for category, message in messages %}
+              <div class="alert alert-{{ category }}">
+                {{ message }}
+              </div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+      </div>
+      <div class="col-md-4">
+        <div class="content-section">
+          <h3>Ranking</h3>
+          <p class='text-muted'>Top scores of ours.
+            <ul class="list-group">
+              <li class="list-group-item list-group-item-light">Jack</li>
+              <li class="list-group-item list-group-item-light">Joe</li>
+              <li class="list-group-item list-group-item-light">Jane</li>
+              <li class="list-group-item list-group-item-light">James</li>
+            </ul>
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>

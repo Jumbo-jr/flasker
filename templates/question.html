@@ -1,0 +1,45 @@
+<article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+                By 
+              <a class="mr-2" href="#">{{ question.author }}</a>
+              <small class="text-muted">on {{ question.date_posted }}</small>
+            </div>
+            <h2><a class="article-title" href="#">Day {{question._id}}: {{ question.title }}</a></h2>
+            <p class="article-content">{{ question.description }}</p>
+
+        <br/>
+        
+            
+
+            <!--
+            <form>
+                <div class="form-group">
+                  <label for="exampleFormControlFile1">upload your python</label>
+                  <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                </div>
+            </form>
+            -->
+
+
+
+            <div class="form-group">
+                {{ form.submit(class="btn btn-outline-info") }}
+            </div>
+
+
+          </div>
+        </article>
+    
+
+
+
+
+    
+    
+
+
+
+
+
+

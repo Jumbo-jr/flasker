@@ -1,12 +1,13 @@
-<h1>Hello World</h1>
-<p>this is my first page from flask</p>
-<p>My name is {{name}}</p>
-<p>{{stuff|safe}}</p>
-<p>{{fruit}}</p>
+{%extends 'layout.html'%}
 
-<p>{{fruit.0}}</p>
+{%block content%}
 
-<br/>
-{%for e in fruit%}
-    <h3>{{e}}</h3>
-{%endfor%}
+{%if current_user.is_authenticated%}
+    {%include 'question.html'%}
+
+{%else%}
+    <h3>Welcome to CodePi11.</h3>
+    <a href="{{url_for('login')}}" class="btn btn-success">Let's get started</a>
+{%endif%}
+
+{%endblock%}

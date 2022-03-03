@@ -1,0 +1,22 @@
+{%extends 'layout.html'%}
+
+{% block content %}
+<h1>Profile</h1>
+<div class="card">
+    <div class="card-header">
+        {{current_user.username}}
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Welcome to your profile.</h5>
+
+      <p class="card-text">
+        <strong>_id: </strong>{{current_user._id}} <br>
+        <strong>Name: </strong>{{current_user.username}} <br>
+        <strong>Email: </strong>{{current_user.email}} <br>
+        <strong>Date joined: </strong>{{current_user.date_added}} <br>
+        <strong>XP: </strong>{{current_user.xp}} <br>
+    </p>
+      <a href="{{url_for('logout')}}" class="btn btn-secondary">Logout</a>
+    </div>
+  </div>
+{%endblock%}
